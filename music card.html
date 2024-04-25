@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<script src="/javascript.js"></script>
+
 
     
     <style>
@@ -18,14 +18,23 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height:100vh;
+            height: auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            background-color: dimgrey;
+            
+            
         }
         .body{
             border: 2px solid transparent;
             padding: 20px;
             border-radius: 20px;
-            box-shadow:rgba(0,0, 0,0.3)0px 25px 38px,rgba(0,0, 0,0.22)0px 20px 18px;
+            box-shadow:rgba(0,0, 0,0.38)2px 29px 38px,rgba(0,0, 0,0.29)0px 28px 28px;
             background: #000;
+            height: auto;
+
+            
+        
 
         }
         .container{
@@ -58,15 +67,15 @@
     
         #image{
             width: 300px;
-            height: 390px;
+            height: 350px;
             opacity: 0.5;
             border-radius: 20px;
             transition: opacity .2s,height .3s,width .3s;
         }
         #image:hover{
             opacity: 3;
-            width: 400px;
-            height: 450px;
+            width: 350px;
+            height: 400px;
         }
         .slider_container{
             display: flex;
@@ -106,12 +115,14 @@
     </style>
 </head>
 <body>
+    <script type="module"  src="../music card/javascript.js"></script> 
     <div class="head">
         <div class="body">
-            <div class="container" id="image">
+            <div class="container">
+                <img src="/objects/pexels-ganinph-7790348.jpg"  alt="" id="image">
                 
             </div>
-            <div class="track_name" onclick="" id="author name">track name</div>
+            <div class="track_name" onclick="" id="author name"></div>
             <div class="slider_container">
                 <div class="sliding">00:00</div>
                 <input type="range" min="1" max="100" value="0" class="seek_slider">
@@ -138,6 +149,7 @@
         </div>
 
     </div>
-    
+<script src="/song details/song_det.js" type="module"></script>
+<script src="/javascript.js" type="module"></script>
 </body>
 </html>

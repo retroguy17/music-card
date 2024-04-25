@@ -1,13 +1,18 @@
-import {music} from "../music card/song details/song_det"
+import {music_list} from "../music card/song details/song_det.js" ;
 
-
-console.log(music[0])
-let container=document.querySelectorAll("container");
+let container=document.querySelector(".container");
  
-let song_name=document.querySelectorAll("track_name");
-let seek_slider=document.querySelectorAll("seek_slider");
-let track_index=0
+let song_name=document.querySelector(".track_name");
+let seek_slider=document.querySelector(".seek_slider");
 let image=document.getElementById("image");
+let track=document.createElement("audio")
 
-let td=document.createElement("img")
-td.src=music[].song_img
+console.warn(music_list[0]);
+function firstsong(){
+
+
+}
+firstsong()
+
+
+
