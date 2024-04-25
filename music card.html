@@ -4,8 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
+font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/
+font-awesome.min.css">
+
+    
+    <style>
+        .head{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+        }
+        .body{
+            border: 2px solid transparent;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow:rgba(0,0, 0,0.3)0px 25px 38px,rgba(0,0, 0,0.22)0px 20px 18px;
+            background: #000;
+
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px; 
+            color:white;
+         
+        }
+        .random_track,.forward_track,
+        .play_pause,.step_forward,
+        .repeat_track{
+            padding: 20px;
+            opacity: 0.5;
+            transition: opacity .2s;
+        }
+        .random_track:hover,.forward_track:hover,
+        .play_pause:hover,.step_forward:hover,
+        .repeat_track:hover{
+            opacity: 5;
+        }
+
+    
+        .image{
+            width: 300px;
+            height: 390px;
+            opacity: 0.5;
+            border-radius: 20px;
+            transition: opacity .2s,height .3s,width .3s;
+        }
+        .image:hover{
+            opacity: 3;
+            width: 400px;
+            height: 450px;
+        }
+        .slider_container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width:100%;
+            margin-top: 20px;
+           
+        }
+        .sliding,.ending{
+            opacity: 0.5;
+            transition: opacity .2s;
+            color: white;
+        }
+        .seek_slider{
+            width: 70%;
+            opacity: 0.5;
+            transition: opacity .2s;
+        }
+        .sliding:hover,
+        .ending:hover,
+        .seek_slider:hover{
+            opacity: 3;
+        }
+        
+        
+
+        
+        
+        
+    </style>
 </head>
 <body>
+    <div class="head">
+        <div class="body">
+            <div class="container" id="img">
+                <img src="https://img.freepik.com/premium-photo/mountain-lake-with-lake-mountains-background_662214-103892.jpg?w=900" alt="no image" class="image">
+            </div>
+            <div class="slider_container">
+                <div class="sliding">00:00</div>
+                <input type="range" min="1" max="100" value="0" class="seek_slider">
+                <div class="ending">00:00</div>
+            </div>
+            <div class="buttons">
+                <div class="random_track">
+                    <i class="fas fa-random fa-2x" title="random"></i> 
+                </div>
+                <div class="forward_track">
+                    <i class="fas fa-step-backward fa-2x"></i>
+                </div>
+                <div class="play_pause">
+                    <i class="fas fa-play-circle fa-5x"></i>
+                </div>
+                <div  class="step_forward">
+                    <i class="fas fa-step-forward fa-2x"></i>
+                </div>
+                <div class="repeat_track">
+                    <i class="fas fa-repeat fa-2x"></i>
+                </div>
+             </div>
+            </div>
+        </div>
+
+    </div>
     
 </body>
 </html>
