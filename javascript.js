@@ -20,9 +20,13 @@ const music_list=[
     song_name:"love me like you do",
     song:"../objects/Love-Me-Like-You-Do_320(PaglaSongs).mp3",
     img:"../objects objects/eline.jpg"
-    }
+},
+     {
+    song_name:"Senorita Shawn Mendes",
+    song:"../music-card/objects/Senorita-Shawn-Mendes_320(PaglaSongs).mp3",
+    img:"../music-card/objects/senorita.jpg",
+     }
 ]
-
 
 
 let container=document.querySelector(".container");
