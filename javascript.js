@@ -34,7 +34,13 @@ let track=document.createElement("audio")
 
 console.warn(music_list[0]);
 function firstsong(){
-    image.app
+    track.load();
+    song_name.textContent=music_list[2].song_name;
+    track.src=music_list[2].song;
+    
+
+
+
 
 
 }
