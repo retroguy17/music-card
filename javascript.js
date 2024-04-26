@@ -16,8 +16,13 @@ const music_list=[
     img:"../objects/pexels-ganinph-7790348.jpg"
 
 },
-
+    {
+    song_name:"love me like you do",
+    song:"../objects/Love-Me-Like-You-Do_320(PaglaSongs).mp3",
+    img:"../objects objects/eline.jpg"
+    }
 ]
+
 
 
 let container=document.querySelector(".container");
@@ -29,6 +34,7 @@ let track=document.createElement("audio")
 
 console.warn(music_list[0]);
 function firstsong(){
+    image.app
 
 
 }
