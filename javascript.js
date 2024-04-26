@@ -32,6 +32,9 @@ const music_list=[
      }
 ]
 
+import {} from ".."
+
+
 
 let container=document.querySelector(".container");
  
