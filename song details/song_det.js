@@ -1,4 +1,7 @@
-const music_list=[
+
+
+
+ const music_list=[
     {
     song_name:"dandelions",
     song:"../objects/Dandelions_320(PaglaSongs).mp3",
@@ -15,24 +18,10 @@ const music_list=[
     song:"../objects/Summertime-Sadness_320(PaglaSongs).mp3",
     img:"../objects/pexels-ganinph-7790348.jpg"
 
-},
+}
+
+
 
 ]
-
-
-let container=document.querySelector(".container");
- 
-let song_name=document.querySelector(".track_name");
-let seek_slider=document.querySelector(".seek_slider");
-let image=document.getElementById("image");
-let track=document.createElement("audio")
-
-console.warn(music_list[0]);
-function firstsong(){
-
-
-}
-firstsong()
-
 
 
