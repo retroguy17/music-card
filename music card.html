@@ -113,18 +113,19 @@
         
         
     </style>
+    
 </head>
 <body>
-    <script type="module"  src="../music card/javascript.js"></script> 
     <div class="head">
         <div class="body">
             <div class="container">
-                <img src="/objects/pexels-ganinph-7790348.jpg"  alt="" id="image">
+                <img src="../objects/eline.jpg"  alt="no_image" id="image">
                 
             </div>
-            <div class="track_name" onclick="" id="author name"></div>
+            <div class="track_name" onclick="" id="author name">Summertime-Sadness</div>
             <div class="slider_container">
                 <div class="sliding">00:00</div>
+                <audio src="/objects/Summertime-Sadness_320(PaglaSongs).mp3" id="track"></audio>
                 <input type="range" min="1" max="100" value="0" class="seek_slider">
                 <div class="ending">00:00</div>
             </div>
@@ -132,13 +133,13 @@
                 <div class="random_track">
                     <i class="fas fa-random fa-2x" title="random"></i> 
                 </div>
-                <div class="forward_track">
+                <div class="forward_track" onclick="prevtrack()">
                     <i class="fas fa-step-backward fa-2x"></i>
                 </div>
-                <div class="play_pause">
+                <div class="play_pause" onclick="playpause()">
                     <i class="fas fa-play-circle fa-5x"></i>
                 </div>
-                <div  class="step_forward">
+                <div  class="step_forward" onclick="nexttrack()">
                     <i class="fas fa-step-forward fa-2x"></i>
                 </div>
                 <div class="repeat_track">
@@ -149,7 +150,103 @@
         </div>
 
     </div>
-<script defer src="/song%20details/song det-js" type="module"* ></script>
-<script src="/javascript.js" type="module"></script>
+    <script>
+        const music_list=[
+    {
+    song_name:"dandelions",
+    song:"../objects/Dandelions_320(PaglaSongs).mp3",
+    img:"https://www.google.com/imgres?q=dandelions%20slowed%20%2B%20reverb%20images&imgurl=https%3A%2F%2Fsource.boomplaymusic.com%2Fgroup10%2FM00%2F03%2F29%2Ffb6a444f04b04f7aba33d98b659705b1_464_464.jpg&imgrefurl=https%3A%2F%2Fwww.boomplay.com%2Fsongs%2F112300788&docid=k1Eo_kLMIpba9M&tbnid=6ABWkmYUHqfHIM&vet=12ahUKEwjhhIy3xN2FAxXjRmwGHa5MAa0QM3oECF8QAA..i&w=464&h=464&hcb=2&ved=2ahUKEwjhhIy3xN2FAxXjRmwGHa5MAa0QM3oECF8QAA"
+},
+    {
+    song_name:"perfect",
+    song:"../objects/Darling-Just-Hld-My-Hand_320(PaglaSongs).mp3",
+    img:"../objects/eline.jpg"
+
+},
+    {
+    song_name:"summertime sadness",
+    song:"../objects/Summertime-Sadness_320(PaglaSongs).mp3",
+    img:"../objects/senorita.jpg"
+
+},
+    {
+    song_name:"love me like you do",
+    song:"../objects/Love-Me-Like-You-Do_320(PaglaSongs).mp3",
+    img:"../objects/eline.jpg"
+    }
+]
+
+
+
+
+
+
+
+
+
+let container=document.querySelector(".container");
+ 
+let song_name=document.querySelector(".track_name");
+let seek_slider=document.querySelector(".seek_slider");
+let image=document.getElementById("image");
+let track=document.querySelector("#track")
+let play_pause_btn=document.querySelector(".play_pause");
+let track_index=0
+
+
+
+
+
+function playpause(){
+    if(track.paused){
+        track.play();
+        play_pause_btn.innerHTML=`<i class="fas fa-pause-circle fa-5x"></i>`
+    }else{
+        track.pause();
+        play_pause_btn.innerHTML=`<i class="fas fa-play-circle fa-5x"></i>`
+
+    }
+}
+
+function nexttrack(){
+    track_index=(track_index+=1)%music_list.length;
+    let currentitem =music_list[track_index];
+    image.src=currentitem.img;
+    track.src=currentitem.song;
+    song_name.innerHTML=currentitem.song_name;
+}
+
+
+function prevtrack(){
+    track_index=(track_index-=1)%music_list.length;
+    let currentitem =music_list[track_index];
+    image.src=currentitem.img;
+    track.src=currentitem.song;
+    song_name.innerHTML=currentitem.song_name;
+    console.log(track_index)
+}
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
 </body>
 </html>
