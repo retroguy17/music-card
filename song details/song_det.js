@@ -25,4 +25,3 @@
 ]
 
 
-export default music_list
