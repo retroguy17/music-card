@@ -31,11 +31,9 @@
             border-radius: 20px;
             box-shadow:rgba(0,0, 0,0.38)2px 29px 38px,rgba(0,0, 0,0.29)0px 28px 28px;
             background: #000;
-            height: auto;
-
-            
-        
-
+            height:92vh;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: oblique;
         }
         .container{
             display: flex;
@@ -48,6 +46,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
+            margin-top: 5px;
             margin-bottom: 20px; 
             color:white;
          
@@ -55,30 +54,32 @@
         .random_track,.forward_track,
         .play_pause,.step_forward,
         .repeat_track{
-            padding: 20px;
-            opacity: 0.5;
+            padding: 15px;
+            opacity: .5;
             transition: opacity .2s;
         }
         .random_track:hover,.forward_track:hover,
         .play_pause:hover,.step_forward:hover,
         .repeat_track:hover{
-            opacity: 5;
+            opacity: 10;
+            color: whitesmoke;
         }
 
     
         #image{
-            width: 300px;
+            width: 3oopx;
             height: 350px;
-            opacity: 0.5;
+            /* opacity: 0.5; */
             border-radius: 20px;
             transition: opacity .2s,height .3s,width .3s;
         }
-        #image:hover{
-            opacity: 3;
-            width: 350px;
-            height: 400px;
+        /* #image:hover{ */
+            /* opacity: 3;
+            width: 300px;
+            height: 350px;
+            transform: scale(.2s); */
             
-        }
+        /* } */
         .slider_container{
             display: flex;
             justify-content: center;
@@ -107,8 +108,11 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
-            font-family: "Dancing script";
+            font-size: large;
+            
+        
         }
+
         
         
 
@@ -122,7 +126,7 @@
     <div class="head">
         <div class="body">
             <div class="container">
-                <img src="../objects/eline.jpg"  alt="no_image" id="image">
+                <img src="/objects/lana_del_rey2.jpg"  alt="no_image" id="image">
                 
             </div>
             <div class="track_name" onclick="" id="author name">Summertime-Sadness</div>
@@ -152,30 +156,32 @@
             </div>
         </div>
 
+        <img src="" alt="">
+
     </div>
     <script>
         const music_list=[
     {
-    song_name:"dandelions",
+    song_name:"Dandelions",
     song:"../objects/Dandelions_320(PaglaSongs).mp3",
     img:"objects/dandelions.jpg"
 },
     {
-    song_name:"perfect",
+    song_name:"Perfect",
     song:"../objects/Darling-Just-Hld-My-Hand_320(PaglaSongs).mp3",
     img:"/objects/Ed_Sheeran_Perfect_Single_cover.jpg"
 
 },
     {
-    song_name:"summertime sadness",
+    song_name:"Summertime Sadness",
     song:"../objects/Summertime-Sadness_320(PaglaSongs).mp3",
-    img:"objects/LANA-DELREY.jpg"
+    img:"/objects/lana_del_rey2.jpg"
 
 },
     {
-    song_name:"love me like you do",
+    song_name:"Love Me Like You Do",
     song:"../objects/Love-Me-Like-You-Do_320(PaglaSongs).mp3",
-    img:"../objects/eline.jpg"
+    img:"/objects/eline_2.jpg"
 },
     {
     song_name:"Senorita Shawn Mendes",
