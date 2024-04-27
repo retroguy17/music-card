@@ -67,19 +67,19 @@
 
     
         #image{
-            width: 3oopx;
-            height: 350px;
-            /* opacity: 0.5; */
+            width: 250px;
+            height: 300px;
+            opacity: 0.5;
             border-radius: 20px;
             transition: opacity .2s,height .3s,width .3s;
         }
-        /* #image:hover{ */
-            /* opacity: 3;
+        #image:hover{
+            opacity: 3;
             width: 300px;
             height: 350px;
-            transform: scale(.2s); */
             
-        /* } */
+            
+        }
         .slider_container{
             display: flex;
             justify-content: center;
@@ -129,11 +129,11 @@
                 <img src="/objects/lana_del_rey2.jpg"  alt="no_image" id="image">
                 
             </div>
-            <div class="track_name" onclick="" id="author name">Summertime-Sadness</div>
+            <div class="track_name" id="author name">Summertime-Sadness</div>
             <div class="slider_container">
                 <div class="sliding">00:00</div>
                 <audio src="/objects/Summertime-Sadness_320(PaglaSongs).mp3"  id="track"></audio>
-                <input type="range" min="1" max="100" value="0" class="seek_slider">
+                <input type="range" min="1" max="100" value="0" class="seek_slider" id="progress">
                 <div class="ending">00:00</div>
             </div>
             <div class="buttons">
@@ -155,9 +155,6 @@
              </div>
             </div>
         </div>
-
-        <img src="" alt="">
-
     </div>
     <script>
         const music_list=[
@@ -169,7 +166,7 @@
     {
     song_name:"Perfect",
     song:"../objects/Darling-Just-Hld-My-Hand_320(PaglaSongs).mp3",
-    img:"/objects/Ed_Sheeran_Perfect_Single_cover.jpg"
+    img:"/objects/ed_sheeran_23.jpg"
 
 },
     {
@@ -186,7 +183,7 @@
     {
     song_name:"Senorita Shawn Mendes",
     song:"/objects/Senorita-Shawn-Mendes_320(PaglaSongs).mp3",
-    img:"objects/senorita.jpg"
+    img:"/objects/senorita_2.jpg"
      }
 ]
 
@@ -205,6 +202,7 @@ let seek_slider=document.querySelector(".seek_slider");
 let image=document.getElementById("image");
 let track=document.querySelector("#track")
 let play_pause_btn=document.querySelector(".play_pause");
+let currentTimeDisplay=document.querySelector(".sliding")
 let track_index=0
 
 
@@ -238,7 +236,6 @@ function prevtrack(){
     image.src=currentitem.img;
     track.src=currentitem.song;
     song_name.innerHTML=currentitem.song_name;
-    console.log(track_index)
     playpause()
 }
 
@@ -257,6 +254,42 @@ track.loop !=track.loop
 
 
 }
+
+track.onloadedmetadata = function(){
+    progress.max = track.duration;
+    progress.value = track.currentTime;
+}
+
+if(track.play){
+
+    setInterval(()=>{
+        progress.value = track.currentTime;
+    },500)
+}
+
+progress.onchange = function(){
+    track.play();
+    track.currentTime = progress.value
+}
+
+track.addEventListener("timeupdate", ()=>{
+    let currentTime = Math.floor(track.currentTime);
+    let Minutes = Math.floor(currentTime /60);
+    let Seconds =currentTime % 60;
+    if (Minutes < 10){
+        Minutes = "0"+Minutes;
+    }
+    if (Seconds < 10){
+        Seconds = "0"+Seconds
+    }
+    let formatedTime = `${Minutes} : ${Seconds}`;
+    currentTimeDisplay.textContent = `${formatedTime}`;
+  console.warn(track.duration);
+})
+
+
+
+    
 
 
    
